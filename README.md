@@ -1,2 +1,15 @@
-# Springboot_MedicineOps
-A simple Springboot+Jpa+thymleaf project_demo about Add/Delete/Update/Search practice
+A backup of my Springboot final exam project
+
+Function:
+
+Add/Delete/Update/Search Mysql data
+
+Using Springboot+Jpa+thymleaf
+
+——————————————————————————————————
+
+我的Springboot期末测试项目备份
+
+功能：
+
+Mysql数据的增删改查
