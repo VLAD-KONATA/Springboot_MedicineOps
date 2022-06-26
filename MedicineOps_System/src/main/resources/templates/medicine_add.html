@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>药品添加</title>
+</head>
+<body>
+<form name="add-form" th:action="@{/Add}" method="post">
+    <table border="1">
+        <tr>
+            <th>药品添加</th>
+        </tr>
+        <tr>
+            <td>药品ID：<input name="MID" type="text"/></td>
+        </tr>
+        <tr>
+            <td>药品名称：<input name="MName" type="text"/></td>
+        </tr>
+        <tr>
+            <td>规格：<input name="MSpecification" type="text"/></td>
+        </tr>
+        <tr>
+            <td>库存单位：<input name="MSUnit" type="text"/></td>
+        </tr>
+        <tr>
+            <td>计量单位：<input name="MDUnit" type="text"/></td>
+        </tr>
+        <tr>
+            <td>购进价：<input name="MPPrice" type="number" step="0.01"/></td>
+        </tr>
+        <tr>
+            <td>零售价：<input name="MRPrice" type="number" step="0.01"/></td>
+        </tr>
+        <tr>
+            <td>库存数量：<input name="MStore" type="number"/></td>
+        </tr>
+        <tr>
+            <td>库存金额：<input name="MAmount" type="number" step="0.01"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="保存" style="align-center" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+
+<style type="text/css">
+    table
+    {
+        border-collapse: collapse;
+        margin: 0 auto;
+        text-align: center;
+    }
+    table td, table th
+    {
+        border: 1px solid #cad9ea;
+        color: #666;
+        height: 30px;
+    }
+    table thead th
+    {
+        background-color: #CCE8EB;
+        width: 100px;
+    }
+    table tr:nth-child(odd)
+    {
+        background: #fff;
+    }
+    table tr:nth-child(even)
+    {
+        background: #F5FAFA;
+    }
+</style>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>药品管理</title>
+</head>
+<body>
+<div name="title">
+  <h1 align="center">药品管理系统</h1>
+</div>
+<div>
+  <div style=" margin-left:400px;">
+    <a th:href="@{/toAdd}">添加药品</a>
+  </div>
+  <div style="margin-left:400px; width: 300px;">
+    <form name="search-form" th:action="@{/Search}" method="get">
+      <input name="MName" type="text" placeholder="搜索药品名称..."/>
+      <input type="submit" value="查找" style="align-center" />
+    </form>
+  </div>
+</div>
+<div>
+  <table border="1">
+    <tr>
+      <td>药品ID</td>
+      <td>药品名称</td>
+      <td>规格</td>
+      <td>库存单位</td>
+      <td>计量单位</td>
+      <td>购进价</td>
+      <td>零售价</td>
+      <td>库存数量</td>
+      <td>库存金额</td>
+      <td>操作</td>
+    </tr>
+    <tr th:each="m:${medicine}">
+      <td th:text="${m.MID}"></td>
+      <td th:text="${m.MName}"></td>
+      <td th:text="${m.MSpecification}"></td>
+      <td th:text="${m.MSUnit}"></td>
+      <td th:text="${m.MDUnit}"></td>
+      <td th:text="${m.MPPrice}"></td>
+      <td th:text="${m.MRPrice}"></td>
+      <td th:text="${m.MStore}"></td>
+      <td th:text="${m.MAmount}"></td>
+      <td>
+        <a th:href="@{/toUpdate(MID=${m.MID})}">修改</a>
+        <a th:href="@{/Delete(MID=${m.MID})}">删除</a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+</body>
+
+<style type="text/css">
+    table
+    {
+        border-collapse: collapse;
+        margin: 0 auto;
+        text-align: center;
+    }
+    table td, table th
+    {
+        border: 1px solid #cad9ea;
+        color: #666;
+        height: 30px;
+    }
+    table thead th
+    {
+        background-color: #CCE8EB;
+        width: 100px;
+    }
+    table tr:nth-child(odd)
+    {
+        background: #fff;
+    }
+    table tr:nth-child(even)
+    {
+        background: #F5FAFA;
+    }
+</style>
+</html>
